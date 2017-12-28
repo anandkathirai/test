@@ -1,0 +1,53 @@
+<form id="usersForm" (ngSubmit)="submitForm()" >
+  <div>
+    <label for="firstName" class="regLabel">First Name</label>
+    <input type="text" id="firstName" spellcheck="false" placeholder="Enter your First Name"/>
+    <div *ngIf="firstName.invalid && (firstName.dirty || submitted)">
+        firstName is required
+    </div>
+  </div>
+  <div>
+    <label for="lastName" class="regLabel">Last Name</label>
+    <input type="text" id="lastName" spellcheck="false" placeholder="Enter your Last Name"/>
+  </div>
+  <div>
+    <label for="employeeId" class="regLabel">Employee Id</label>
+    <input type="text" id="employeeId" spellcheck="false" placeholder="Enetr your Employee id" />
+  </div>
+  
+  <div>
+    
+<input type="submit" value="Add" class="submitbutton"/>
+<input type="button" class="button" value="Reset" (click)="reset()">
+  </div>
+<br/>
+<br/>
+<br/>
+<br/>
+
+</form>
+<hr>
+<form id="users-list-form">
+  <div>
+      <input type="text" id="searchtext" spellcheck="false" placeholder="Search..."/>
+      <label for="sort">Sort: </label>
+      <input type="button"  value="First Name" (click)="reset()" class="UserListButton">
+      <input type="button"  value="Last Name" (click)="reset()" class="UserListButton">
+      <input type="button"  value="Id" (click)="reset()" class="UserListButton">
+</div>
+  <hr>
+  <div> 
+    <div>
+      <input type="text" id="firstName" spellcheck="false" placeholder="Enter your First Name" class="form-control" readonly/>
+      <input type="button" value="Edit" (click)="reset()" class="UserListButton">
+  </div> 
+  <div> 
+    <input type="text" id="lastName" spellcheck="false" placeholder="Enter your Last Name" class="form-control" readonly/>
+      <input type="button" value="Delete" (click)="reset()" class="UserListButton">
+  </div> 
+  <div> 
+    <input type="text" id="employeeId" spellcheck="false" placeholder="Enetr your Employee id" class="form-control" readonly/>
+  </div> 
+  <hr style="border-top: dotted 1px;" />
+</div>
+</form>
